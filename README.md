@@ -38,8 +38,11 @@ Applikationen ska innehålla:
 
 ## Databasdetaljer
 Connection string: jdbc:mysql://165.22.81.196:44244/todo
+
 Username: todo-user
+
 Password: <skickat till dig via mail>
+ 
 
 Uppdatera filen `src/main/resources/application.properties` med lösenordet.
 
