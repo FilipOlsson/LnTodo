@@ -1,7 +1,10 @@
 package se.logandtwig.todo.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity(name = "todos")
 public class TodoEntity {
 
@@ -21,16 +24,4 @@ public class TodoEntity {
 	@JoinColumn(name = "user_id")
 	private UserEntity owner;
 
-
-	public Integer getId() {
-		return id;
-	}
-
-	public String getTask() {
-		return task;
-	}
-
-	public UserEntity getOwner() {
-		return owner;
-	}
 }

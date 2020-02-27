@@ -1,5 +1,8 @@
 package se.logandtwig.todo.controller.response;
 
+import se.logandtwig.todo.model.TodoEntity;
+
+
 /**
  * This is the response representation of a single task.
  */
@@ -8,20 +11,22 @@ public class TodoDto {
 	public TodoDto() {
 	}
 
-	public TodoDto(Long id, String task, String username) {
+	public TodoDto(Integer id, String task, String username) {
 		this.id = id;
 		this.task = task;
 		this.username = username;
 	}
 
-	private Long id;
+	private Integer id;
+
 	private String task;
+
 	private String username;
 
 	/**
 	 * @return The unique ID of the task
 	 */
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
@@ -36,6 +41,10 @@ public class TodoDto {
 	 * @return The owner of the task
 	 */
 	public String username() {
-		return task;
+		return username;
+	}
+
+	public static TodoDto convertToDto(TodoEntity todoEntity){
+		return new TodoDto(todoEntity.getId(),todoEntity.getTask(),todoEntity.getOwner().getUsername());
 	}
 }

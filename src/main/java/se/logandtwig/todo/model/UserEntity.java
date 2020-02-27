@@ -1,10 +1,12 @@
 package se.logandtwig.todo.model;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+@Data
 @Entity(name = "users")
 public class UserEntity {
 
@@ -17,11 +19,4 @@ public class UserEntity {
 	 */
 	private String username;
 
-	public Integer getId() {
-		return id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
 }
